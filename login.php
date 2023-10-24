@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login1.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <form  method="post" action="">
+    <h1>LOGIN</h1>
     <label for="username">Username</label>
-    <input type=" text" id="username">
+    <input name="user" type=" text" id="username">
 
     <label for="password">Password</label>
-    <input type=" password" id="password">
+    <input name="password" type=" password" id="password">
 
     <div class="remember">
         <p>Recordar</p>
         <p>Olvide Contraseña</p>
     </div>
 
-    <input type="submint" class="btn-1" value="Iniciar Sesion">
+    <input type="submint" name="ingresar" class="btn" value="Iniciar Sesion">
+
+    <?php
+    include("controlador.php");
+    include("conexion.php");
+    ?>
+    </form>
+   
 
 </body>
 </html>
