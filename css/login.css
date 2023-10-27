@@ -9,7 +9,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../img/clinica-veterinaria-medico-mascotas-enfermas_107791-11715.avif);
+    background-image: url();
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +22,7 @@ form{
     width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 2.0);
     border-radius: 15px;
-    background-color: #EEEEEE;
+    background-color: #ffffff;
 }
 h1{
     text-align: center;
@@ -38,24 +38,26 @@ label, p{
 }
 input{
     padding: 17px 11px;
-    border: 1px solid #00adef;
+    border: 1px solid #090909;
     border-radius: 25px;
     margin-bottom: 25px;
-    background-color: aliceblue;
+    background-color: floralwhite;
     outline: none;
-    color: #00adef;
+    color: #575757;
     font-size: 17px;
 }
 .btn{
-    background-color: #00adef;
+    background-color: #ffffff;
     font-size: 15px;
-    color: 15px;
-    color: aliceblue;
+    text-align: center;
+    color: rgb(5, 5, 5);
     text-transform: uppercase;
     cursor: pointer;
+    user-select: none;
+
 }
 .btn:hover{
-    background-color: #00adef;  
+    background-color: #ffffff;  
 }
 
 .remember{
