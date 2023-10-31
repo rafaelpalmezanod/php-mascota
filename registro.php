@@ -12,7 +12,7 @@
     <input type="text" placeholder="Nombre" name="nombre">
     <input type="text" placeholder="Email" name="email">
     <input type="text" placeholder="Username" name="username">
-    <input type="text" placeholder="Password" name="password">
+    <input type="password" placeholder="Password" name="password">
     <input type="submit" name="ingresar" class="btn" value="Iniciar Sesion">
 </form>
 <?php

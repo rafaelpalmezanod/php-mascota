@@ -13,7 +13,7 @@
     <input name="user" type=" text" id="username">
 
     <label for="password">Password</label>
-    <input name="password" type=" password" id="password">
+    <input name="password" type=" password" id="password" required>
 
     <div class="remember">
         <p>Recordar</p>
