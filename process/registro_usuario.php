@@ -10,7 +10,18 @@ class RegistroUsuario extends conexion
                 echo"campo vacio";
              }
              else{
-                (new UserControl)->crear();
+                $conect = (new conexion)->conn();
+                $username = $conect -> real_escape_string($_POST["username"]);
+                $email = $conect -> real_escape_string($_POST["email"]);
+                $mysql = "SELECT * FROM User WHERE username =  '$username' or email =  '$email'";
+                // $result = mysqli_query($conect,$mysql);
+                $result = $conect -> query($mysql);
+                if($result -> num_rows > 0){
+                   echo"Datos en Uso";
+                }
+                else{
+                    (new UserControl)->crear();
+                }
              }
 
         }   

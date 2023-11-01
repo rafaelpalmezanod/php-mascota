@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    require_once(__DIR__."/conexion.php");
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +11,13 @@
 </head>
 <body>
     <form  method="post" action="">
+        <?php
+            require_once(__DIR__."/process/login_usuario.php");
+            echo (new Login_usuario)-> validarLogin();
+        ?>
     <h1>LOGIN</h1>
     <label for="username">Username</label>
-    <input name="user" type=" text" id="username">
+    <input name="user" type=" text" id="username" required>
 
     <label for="password">Password</label>
     <input name="password" type=" password" id="password" required>
@@ -20,12 +27,9 @@
         <p>Olvide Contraseña</p>
     </div>
 
-    <input type="submint" name="ingresar" class="btn" value="Iniciar Sesion">
+    <input type="submit" name="ingresar" class="btn" value="Iniciar Sesion">
 
-    <?php
-    include("controlador.php");
-    include("conexion.php");
-    ?>
+
     </form>
    
 
