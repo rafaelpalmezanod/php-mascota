@@ -23,6 +23,7 @@ form{
     box-shadow: 0 0 20px rgba(0, 0, 0, 2.0);
     border-radius: 15px;
     background-color: #ffffff;
+    opacity: 0.7;
 }
 h1{
     text-align: center;
@@ -41,13 +42,13 @@ input{
     border: 1px solid #090909;
     border-radius: 25px;
     margin-bottom: 25px;
-    background-color: floralwhite;
+    background-color: #ffffff;
     outline: none;
     color: #575757;
     font-size: 17px;
 }
 .btn{
-    background-color: #ffffff;
+    background-color: #b9b9b9;
     font-size: 15px;
     text-align: center;
     color: rgb(5, 5, 5);

@@ -7,16 +7,16 @@ class Login_usuario extends conexion
 {
     public function validarLogin(){
         if(isset($_POST["ingresar"])){
-            if(empty($_POST["username"]) or empty($_POST["password"])){
+            if(isset($_POST["username"]) or isset($_POST["password"])){
                 echo"Campo vacio";
-            } else {
+            } 
+            else{
                 $conect = (new conexion)->conn();
                 $username = $conect -> real_escape_string($_POST["username"]);
                 $password = $conect -> real_escape_string($_POST["password"]);
-
                 $mysql = "SELECT * FROM User WHERE username =  $username";
-                // $result = mysqli_query($conect,$mysql);
-                $result = $conect -> query($mysql);
+                $result = mysqli_query($conect,$mysql);
+                // $result = $conect -> query($mysql);
                 if($result -> num_rows > 0){
                     $mysql = "SELECT * FROM User WHERE password =  $password";
                     $result = $conect -> query($mysql);
@@ -26,7 +26,7 @@ class Login_usuario extends conexion
                         session_start();
                         $_SESSION["username"] = $username;
                         $_SESSION["Role"] = $resultArray["Role_id"];
-                        echo "Bien";
+                        
                     }
                     else{
                         echo "contraseña invalida";
@@ -36,9 +36,11 @@ class Login_usuario extends conexion
                 }
 
             }
-            
-  
+        }
+        if(isset($_POST["registro"])){
+            header("location: registro.php");
         }
     }
 }
+
 ?>

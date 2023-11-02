@@ -24,24 +24,27 @@ class RegistroUsuario extends conexion
                 }
              }
 
+        }
+        if(isset($_POST["login"])){
+            header("location: login.php");
         }   
 
     }
 
-    public function validarUsuario(){
-        if (isset($_POST["eliminar"])) {
-            if(empty($_POST["id"])) {
-                echo "Eliminado";
-            }
-        }  
-    }
+    // public function validarUsuario(){
+    //     if (isset($_POST["eliminar"])) {
+    //         if(empty($_POST["id"])) {
+    //             echo "Eliminado";
+    //         }
+    //     }  
+    // }
 
-    public function validarPerfil(){
-        if (isset($_POST["actualizar"])) {
-            if(empty($_POST["nombre"])or empty($_POST["username"])or empty($_POST["email"])or empty($_POST["password"]))
-            echo "Actualizacion Exitosa ";
-        }
-    }
+    // public function validarPerfil(){
+    //     if (isset($_POST["actualizar"])) {
+    //         if(empty($_POST["nombre"])or empty($_POST["username"])or empty($_POST["email"])or empty($_POST["password"]))
+    //         echo "Actualizacion Exitosa ";
+    //     }
+    // }
 
 }
 ?>
