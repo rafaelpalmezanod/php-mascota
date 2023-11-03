@@ -17,10 +17,10 @@
         ?>
     <h1>LOGIN</h1>
     <label for="username">Username</label>
-    <input name="user" type=" text" id="username">
+    <input name="username" type=" text" id="username" required>
 
     <label for="password">Password</label>
-    <input name="password" type="password" id="password" >
+    <input name="password" type="password" id="password" required>
 
     <div class="remember">
         <p>Recordar</p>
@@ -28,7 +28,7 @@
     </div>
 
     <input type="submit" name="ingresar" class="btn" value="Iniciar Sesion">
-    <input type="submit" name="registro" class="btn" value="Registro">
+    <a href="registro.php" class="btn" value="">Registro</a>
     </form>
    
 
