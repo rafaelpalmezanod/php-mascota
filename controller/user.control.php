@@ -33,7 +33,7 @@ include_once(__DIR__."/../model\user.php");
         $result = $conect->query($msql);
         $users =[];
         if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
+            while($row = $result->fetch_array($result)){
                 $users[] = $row;
             }
         }         
