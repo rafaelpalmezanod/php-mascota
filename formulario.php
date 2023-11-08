@@ -10,24 +10,28 @@
 <div class="container">
     <h1>Dashboard de Usuarios</h1>
   <?php
+  require_once(__DIR__ ."/controller\user.control.php");
+  $users = (new UserControl)-> read();
+  ?>
+  <div style="display:flex; gap:2vh;" class="header">
+  <p class="text_row">ID</p>
+  <p class="text_row">NOMBRE</p>      
+  <p class="text_row">EMAIL</p>   
+  <p class="text_row">USERNAME</p>   
+  <p class="text_row">PASSWORD</p>  
+  <p class="text_row">ROLE_ID</p>    
+</div>
+<?php
   foreach ($users as $user) {
   ?>
     <form action="">
-      <div class="header">
-        <p class="text_row">ID</p>
-        <p class="text_row">NOMBRE</p>      
-        <p class="text_row">EMAIL</p>   
-        <p class="text_row">USERNAME</p>   
-        <p class="text_row">PASSWORD</p>  
-        <p class="text_row">ROLE_ID</p>    
-      </div>
-      <div class="cont">
+
+      <div style="display:flex; gap:2vh;" class="cont"> 
         <p class="text_row"><?php echo  $user['id']," ";?></p>
         <p class="text_row"><?php echo  $user['nombre']," ";?></p>      
         <p class="text_row"><?php echo  $user['email']," ";?></p>   
         <p class="text_row"><?php echo  $user['username']," ";?></p>   
-        <p class="text_row"><?php echo  $user['password']," ";?></p>  
-        <p class="text_row"><?php echo  $user['Rol_id']," ";?></p>  
+        <p class="text_row"><?php echo  $user['Role_id']," ";?></p>  
       </div>
 
     </form>

@@ -29,16 +29,16 @@ include_once(__DIR__."/../model\user.php");
 
     public function read(){
         $conect = (new conexion)->conn();
-        $msql = "SELECT id, nombre,username,email,role_id  FROM User";
+        $msql = "SELECT id, nombre,username,email,Role_id  FROM User";
         $result = $conect->query($msql);
         $users =[];
-        if($result->num_rows > 0){
-            while($row = $result->fetch_array($result)){
-                $users[] = $row;
-            }
-        }         
+        // if($result->num_rows > 0){
+        //     while($row = $result->fetch_array($result)){
+        //         $users[] = $row;
+        //     }
+        // }         
         $conect->close(); 
-        return $users; 
+        return $result; 
     }
      
     
