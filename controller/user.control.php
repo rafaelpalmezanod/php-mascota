@@ -43,7 +43,7 @@ include_once(__DIR__."/../model\user.php");
      
     
     
-    public function update( $id, $data ){
+    public function update( $id ){
         $conect = (new conexion)->conn();
        $modelUser = (new User);
        $modelUser->nombre=$_POST["nombre"];
