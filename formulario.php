@@ -13,6 +13,12 @@
   <?php
   require_once(__DIR__ ."/controller\user.control.php");
   $users = (new UserControl)-> read();
+
+  if (isset ($_POST["borrar"] )){ 
+    (new UserControl)-> delete($_POST);
+  
+  }
+  
   ?>
   <div class="header">
   <p class="text_row">ID</p>
@@ -24,25 +30,29 @@
 <?php
   foreach ($users as $user) {
   ?>
-    <form action="">
+    <form method="post">
 
       <div class="cont"> 
+        <div class="cont__info">
         <p class="text_row"><?php echo  $user['id']," ";?></p>
         <p class="text_row"><?php echo  $user['nombre']," ";?></p>      
         <p class="text_row"><?php echo  $user['email']," ";?></p>   
         <p class="text_row"><?php echo  $user['username']," ";?></p>   
         <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
-        <!-- Botón de Editar -->
-        <button type="submit" name="edit_id" value="<?php echo $user['id']; ?>" class="edit-button">Editar</button>
-
-        <!-- Botón de Borrar -->
-        <a href="user_form_handler.php?delete_id=<?php echo $user['id']; ?>" onclick="return confirm('¿Estás seguro de que quieres borrar este usuario?')" class="delete-button">Borrar</a>
+        </div>
+        <div class="cont__btn">
+        <input type="submit" name="editar" value="">
+          
+         <input type="submit" name="borra" value="<?php echo  $user['id'];?>">
+        </div>
+       
       </div>
 
     </form>
   <?php
   }
   ?>
+  
   
 </body>
 </html>

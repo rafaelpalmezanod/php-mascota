@@ -40,9 +40,41 @@ include_once(__DIR__."/../model\user.php");
         $conect->close(); 
         return $result; 
     }
-     
+    public function update($id)
+    {
+        $conect = (new conexion)->conn();
+        $modelUser = new User();
+    
+        // Obtener datos del formulario
+        $modelUser->nombre = $_POST["nombre"];
+        $modelUser->email = $_POST["email"];
+        $modelUser->password = $_POST["password"];
+        $modelUser->username = $_POST["username"];
+        $modelUser->role_id = "1"; // Ajusta según tus necesidades
+    
+        // Utilizar prepared statements para evitar inyecciones SQL
+        $msql = "UPDATE User SET nombre=?, username=?, email=?, password=?, Role_id=? WHERE id=?";
+        
+        $stmt = $conect->prepare($msql);
+        $stmt->bind_param("sssssi", $modelUser->nombre, $modelUser->username, $modelUser->email, $modelUser->password, $modelUser->role_id, $id);
+    
+        // Ejecutar la consulta
+        $stmt->execute();
+    
+        // Verificar si la consulta fue exitosa
+        if ($stmt->affected_rows > 0) {
+            echo "Usuario actualizado correctamente.";
+        } else {
+            echo "Error al actualizar el usuario.";
+        }
+    
+        // Cerrar la conexión y liberar recursos
+        $stmt->close();
+        $conect->close();
+    }
     
     
+ /*   
     public function update( $id ){
         $conect = (new conexion)->conn();
        $modelUser = (new User);
@@ -54,8 +86,9 @@ include_once(__DIR__."/../model\user.php");
        $msql = "UPDATE User (nombre,username,email,password,Role_id) value ('$modelUser->nombre', '$modelUser->username', '$modelUser->email', '$modelUser->password', '$modelUser->role_id')";
        $conect->query($msql);
        $conect->close();
-    }
+    }*/
 
+    
     public function delete($id){
         $conect = (new conexion)->conn();
         $msql = "DELETE FROM User WHERE id = $id ";

@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    width: 95%;
+    width: 100%;
     margin: 1em auto;
     
 }
@@ -14,19 +14,32 @@ h1 {
     text-align: center;
     font-size: 3em; 
 }
+.header,.cont{
+    display: grid;
+}
 
 .header {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: clamp(20px,6%,100px) 8% auto 26% 16%;
     gap: 8vh;
     font-weight: bold;
     background-color: #eee;
-    padding: 1em;
     font-size: 1.5em; 
+    text-align: center;
 }
 .cont{
-    display: flex;
+   display: grid;
+   grid-template-columns: 100% max-content;
+   position: relative;
     padding: 1em;
     gap: 10vh;
+    text-align: center;
+}
+.cont__info{
+    display: grid;
+    grid-template-columns: clamp(20px,6%,100px) 8% auto 26% 16%;
+    gap: 8vh; 
 }
 
 .user-form {
@@ -41,22 +54,11 @@ h1 {
     border: 1px solid #ddd;
     font-size: 30em;
 }
-.edit-button,
-.delete-button {
-    padding: 1vh 1vw;
-    margin-left: 5em;
-    cursor: pointer;
-    font-size: 2em; 
-}
-.edit-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-}
-
-.delete-button {
-    background-color: #f44336;
-    color: #fff;
-    text-decoration: none;
-    border: none;
+.cont__btn{
+    display: grid;
+    margin: auto;
+    right: 0;
+    position: absolute;
+    padding: 20px;
+    
 }
