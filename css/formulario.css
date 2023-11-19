@@ -7,38 +7,40 @@ body {
 .container {
     width: 100%;
     margin: 1em auto;
-    
 }
 
 h1 {
     text-align: center;
     font-size: 3em; 
 }
-.header,.cont{
+
+.header, .cont {
     display: grid;
 }
 
 .header {
     width: 100%;
     display: grid;
-    grid-template-columns: clamp(20px,6%,100px) 8% auto 26% 16%;
+    grid-template-columns: clamp(20px, 6%, 100px) 8% auto 26% 16%;
     gap: 8vh;
     font-weight: bold;
     background-color: #eee;
     font-size: 1.5em; 
     text-align: center;
 }
-.cont{
-   display: grid;
-   grid-template-columns: 100% max-content;
-   position: relative;
+
+.cont {
+    display: grid;
+    grid-template-columns: 100% max-content;
+    position: relative;
     padding: 1em;
     gap: 10vh;
     text-align: center;
 }
-.cont__info{
+
+.cont__info {
     display: grid;
-    grid-template-columns: clamp(20px,6%,100px) 8% auto 26% 16%;
+    grid-template-columns: clamp(20px, 6%, 100px) 8% auto 26% 16%;
     gap: 8vh; 
 }
 
@@ -54,11 +56,29 @@ h1 {
     border: 1px solid #ddd;
     font-size: 30em;
 }
-.cont__btn{
+
+.cont__btn {
     display: grid;
     margin: auto;
     right: 0;
     position: absolute;
     padding: 20px;
-    
+}
+
+input[type="submit"] {
+    margin-bottom: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
 }

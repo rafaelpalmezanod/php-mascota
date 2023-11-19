@@ -1,68 +1,70 @@
-*{
+
+body {
+    font-family: sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  form {
+    width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  img{
+    width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url(../img/Fondo-quienes-somos-1.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-form{
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 2.0);
-    border-radius: 15px;
-    background-color: #ffffff;
-    opacity: 0.7;
-}
-h1{
+    margin: auto;
+  }
+  
+  form h1 {
     text-align: center;
-    font-size: 30px;
-    text-transform: uppercase;
-    color: black;
-    margin-bottom: 25px;
-}
-label, p{
-    font-size: 17px;
-    color: #575757;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input {
+    width: 95%;
+    padding: 10px;
     margin-bottom: 10px;
-}
-input{
-    padding: 17px 11px;
-    border: 1px solid #090909;
-    border-radius: 25px;
-    margin-bottom: 25px;
-    background-color: #ffffff;
-    outline: none;
-    color: #575757;
-    font-size: 17px;
-}
-.btn{
-    background-color: #b9b9b9;
-    font-size: 15px;
-    text-align: center;
-    color: rgb(5, 5, 5);
-    text-transform: uppercase;
-    cursor: pointer;
-    user-select: none;
-
-}
-.btn:hover{
-    background-color: #ffffff;  
-}
-
-.remember{
+    border: 1px solid #ccc;
+  }
+  
+  form .remember {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+  }
+  
+  form .remember p {
+    font-size: 12px;
+    text-decoration: underline;
+  }
+  
+  form .btn  {
+    width: 100%;
+    background-color: #008CBA;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  form a{
+
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    color: #008CBA;
+  }
+  a.btn {
+    width: 89%;
 }

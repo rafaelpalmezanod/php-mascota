@@ -39,12 +39,18 @@
         <p class="text_row"><?php echo  $user['email']," ";?></p>   
         <p class="text_row"><?php echo  $user['username']," ";?></p>   
         <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
-        </div>
+        <form action="updae.php" method="post"> 
+        </div> 
         <div class="cont__btn">
-        <input type="submit" name="editar" value="">
-          
-         <input type="submit" name="borra" value="<?php echo  $user['id'];?>">
+        <input type="submit"  name="editar" value="Editar<?php echo  $user['id']  ;?>">
+  
+        <input type="submit" name="borra" value=" Borrar<?php echo  $user['id'] ;?>">
+        <label for=""></label>
         </div>
+        </form>
+        
+
+        
        
       </div>
 
