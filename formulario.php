@@ -14,8 +14,8 @@
   require_once(__DIR__ ."/controller\user.control.php");
   $users = (new UserControl)-> read();
 
-  if (isset ($_POST["borrar"] )){ 
-    (new UserControl)-> delete($_POST);
+  if (isset ($_GET["borrar"] )){ 
+    (new Eliminarusuario)-> delearUsuario($_GET);
   
   }
   
@@ -42,7 +42,7 @@
         <form action="updae.php" method="post"> 
         </div> 
         <div class="cont__btn">
-        <input type="submit"  name="editar" value="Editar<?php echo  $user['id']  ;?>">
+        <input type="submit"  name="editar" value="">
   
         <input type="submit" name="borra" value=" Borrar<?php echo  $user['id'] ;?>">
         <label for=""></label>

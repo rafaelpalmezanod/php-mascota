@@ -44,31 +44,24 @@ include_once(__DIR__."/../model\user.php");
     {
         $conect = (new conexion)->conn();
         $modelUser = new User();
-    
-        // Obtener datos del formulario
+
         $modelUser->nombre = $_POST["nombre"];
         $modelUser->email = $_POST["email"];
         $modelUser->password = $_POST["password"];
         $modelUser->username = $_POST["username"];
-        $modelUser->role_id = "1"; // Ajusta según tus necesidades
-    
-        // Utilizar prepared statements para evitar inyecciones SQL
+        $modelUser->role_id = "1"; 
+
         $msql = "UPDATE User SET nombre=?, username=?, email=?, password=?, Role_id=? WHERE id=?";
         
         $stmt = $conect->prepare($msql);
-        $stmt->bind_param("sssssi", $modelUser->nombre, $modelUser->username, $modelUser->email, $modelUser->password, $modelUser->role_id, $id);
-    
-        // Ejecutar la consulta
+        $stmt->bind_param("sssssi", $modelUser->nombre, $modelUser->username, $modelUser->email, $modelUser->password, $modelUser->role_id, $id);    
         $stmt->execute();
-    
-        // Verificar si la consulta fue exitosa
         if ($stmt->affected_rows > 0) {
             echo "Usuario actualizado correctamente.";
         } else {
             echo "Error al actualizar el usuario.";
         }
     
-        // Cerrar la conexión y liberar recursos
         $stmt->close();
         $conect->close();
     }
