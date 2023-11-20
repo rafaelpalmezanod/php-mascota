@@ -76,7 +76,7 @@ include_once(__DIR__."/../model\user.php");
        $modelUser->password=$_POST["password"];
        $modelUser->username=$_POST["username"];
        $modelUser->role_id="1";
-       $msql = "UPDATE User (nombre,username,email,password,Role_id) value ('$modelUser->nombre', '$modelUser->username', '$modelUser->email', '$modelUser->password', '$modelUser->role_id')";
+       $msql = "UPDATE User (nombre,username,email,password,Role_id) value ('$modelUser->nombre', '$modelUser->username', '$modelUser->email', '$modelUser->password', '$modelUser->role_id') WHERE id = '$id'";
        $conect->query($msql);
        $conect->close();
     }

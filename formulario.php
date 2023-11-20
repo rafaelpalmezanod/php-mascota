@@ -14,9 +14,12 @@
   require_once(__DIR__ ."/controller\user.control.php");
   $users = (new UserControl)-> read();
 
-  if (isset ($_GET["borrar"] )){ 
-    (new Eliminarusuario)-> delearUsuario($_GET);
-  
+  if (isset($_POST["borrar"] )){ 
+    (new Eliminarusuario)-> delearUsuario($_POST['borra']);
+  }elseif (isset($_POST["editar"])){
+    session_start();
+    $_SESSION["idUser"] = $_POST["editar"];
+    header('location:update.php');
   }
   
   ?>
@@ -31,27 +34,18 @@
   foreach ($users as $user) {
   ?>
     <form method="post">
-
       <div class="cont"> 
         <div class="cont__info">
-        <p class="text_row"><?php echo  $user['id']," ";?></p>
-        <p class="text_row"><?php echo  $user['nombre']," ";?></p>      
-        <p class="text_row"><?php echo  $user['email']," ";?></p>   
-        <p class="text_row"><?php echo  $user['username']," ";?></p>   
-        <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
-        <form action="updae.php" method="post"> 
+          <p class="text_row"><?php echo  $user['id']," ";?></p>
+          <p class="text_row"><?php echo  $user['nombre']," ";?></p>      
+          <p class="text_row"><?php echo  $user['email']," ";?></p>   
+          <p class="text_row"><?php echo  $user['username']," ";?></p>   
+          <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
         </div> 
         <div class="cont__btn">
-        <input type="submit"  name="editar" value="">
-  
-        <input type="submit" name="borra" value=" Borrar<?php echo  $user['id'] ;?>">
-        <label for=""></label>
+          <input type="submit" name="editar" value="<?php echo$user['id'];?>">
+          <input type="submit" name="borra" value="<?php echo$user['id'] ;?>">
         </div>
-        </form>
-        
-
-        
-       
       </div>
 
     </form>
