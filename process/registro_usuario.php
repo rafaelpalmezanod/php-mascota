@@ -26,7 +26,7 @@ class RegistroUsuario extends conexion
 
         }
         if(isset($_POST["login"])){
-            header("location: inicio.login.php");
+            header("location: login.php");
         }   
 
     }
