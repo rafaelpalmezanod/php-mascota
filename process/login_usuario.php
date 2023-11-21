@@ -25,7 +25,7 @@ class Login_usuario extends conexion
                         $_SESSION["username"] = $username;
                         $_SESSION["Role"] = $resultArray["Role_id"];
                         $_SESSION["id"] = $resultArray["id"];
-                        header("location: inicio.php");
+                        header("location: inicio.login.php");
                     }
                     else{
                         echo "contraseña invalida";

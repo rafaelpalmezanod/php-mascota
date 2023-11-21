@@ -15,7 +15,7 @@
       </a>
       <nav>
         <ul>
-          <li><a href="inicio.php">Inicio</a></li>
+          <li><a href="inicio.php">Atras</a></li>
           <li><a href="formulario.php">Formulario</a></li>
           
         </ul>

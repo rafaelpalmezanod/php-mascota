@@ -15,7 +15,7 @@
     require_once __DIR__ ."/conexion.php";
     $conect = (new conexion) -> conn();
     if (!($conect->connect_error)) {
-        header("location: registro.php");   
+        header("location: inicio.php");   
     } 
     else {
         echo "error";
