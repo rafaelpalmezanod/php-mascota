@@ -16,8 +16,8 @@
       <nav>
         <ul>
           <li><a href="inicio.php">Inicio</a></li>
-          <li><a href="login.php">Iniciar Sesion</a></li>
-          <li><a href="registro.php">Registrame</a></li>
+          <li><a href="formulario.php">Formulario</a></li>
+          
         </ul>
       </nav>
     </div>

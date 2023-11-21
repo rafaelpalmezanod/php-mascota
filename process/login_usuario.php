@@ -24,6 +24,7 @@ class Login_usuario extends conexion
                         session_start();
                         $_SESSION["username"] = $username;
                         $_SESSION["Role"] = $resultArray["Role_id"];
+                        $_SESSION["id"] = $resultArray["id"];
                         header("location: inicio.php");
                     }
                     else{
@@ -36,7 +37,7 @@ class Login_usuario extends conexion
             }
         }
         if(isset($_POST["registro"])){
-            header("location: registro.php");
+            header("location: inicio.login.php");
         }
     }
 }
