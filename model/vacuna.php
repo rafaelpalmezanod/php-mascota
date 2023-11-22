@@ -1,5 +1,5 @@
 <?php
-class Vacunas {
+class Vacuna {
    public int $id;
    public string $nombre;
 }
