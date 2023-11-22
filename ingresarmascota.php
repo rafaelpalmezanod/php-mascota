@@ -15,16 +15,7 @@
     <input type="date" placeholder="Email" name="fechanacimieno" >
     <input type="text" placeholder="Username" name="username" >
     <input type="text" placeholder="tipomascota" name="tipomascota" >
-    <select name="tipomascota" id="">
-        <option value=""></option>
-        <option value="1">Gato</option>
-        <option value="2">Perro</option>
-        <option value="3">Pez</option>
-
-    </select>
-
-    <input type="text" placeholder="raza" name="raza
-    " >
+    <input type="text" placeholder="raza" name="raza" >
 
     <input type="submit" name="ingresar" class="btn" value="Registrame" >
 </form>
