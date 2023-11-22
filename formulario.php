@@ -29,9 +29,9 @@
   <p class="text_row">EMAIL</p>   
   <p class="text_row">USERNAME</p>    
   <p class="text_row">ROLE_ID</p>    
-</div>
-<?php
-  foreach ($users as $user) {
+  </div>
+  <?php
+    foreach ($users as $user) {
   ?>
     <form method="post">
       <div class="cont"> 

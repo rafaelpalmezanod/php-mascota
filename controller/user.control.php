@@ -4,15 +4,6 @@ include_once(__DIR__."/../model\user.php");
 
 
  class UserControl extends conexion {
-    
-
-        
-        // $this->conn();
-        // $conect =(new conexion)->conn();
-
-        // $conect = conexion::conn();
-    
-
     public function crear(){
         $conect = (new conexion)->conn();
        $modelUser = (new User);
@@ -33,11 +24,7 @@ include_once(__DIR__."/../model\user.php");
         $msql = "SELECT id, nombre,username,email,Role_id  FROM User";
         $result = $conect->query($msql);
         $users =[];
-        // if($result->num_rows > 0){
-        //     while($row = $result->fetch_array($result)){
-        //         $users[] = $row;
-        //     }
-        // }         
+            
         $conect->close(); 
         return $result; 
     }
@@ -87,7 +74,8 @@ include_once(__DIR__."/../model\user.php");
         $conect = (new conexion)->conn();
         $msql = "DELETE FROM User WHERE id = $id ";
         $result = $conect->query($msql);
-        $conect->close();
+        return $result;
+       
     }
 
 

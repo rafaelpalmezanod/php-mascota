@@ -18,7 +18,9 @@ class Vacunacontrol extends conexion{
         $conect =(new conexion)->conn();
         $msql = "SELECT id,nombre FROM vacuna";
         $result = $conect->query($msql);
-        
+        $vacuna =[];
+        $conect->close();
+        return $result;
 
     }
 
