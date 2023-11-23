@@ -8,17 +8,31 @@
     <link rel="stylesheet" href="css\ingresarmascota.css">
 </head>
 <body>
-<form  method="post" action="">
-    <img src="./img/Logo veterinaria pet shop rustico blanco y negro.png" alt="">
-    <h1>REGISTRO MASCOTA</h1>
-    <input type="text" placeholder="Nombre" name="nombre" >
-    <input type="date" placeholder="Email" name="fechanacimieno" >
-    <input type="text" placeholder="Username" name="username" >
-    <input type="text" placeholder="tipomascota" name="tipomascota" >
-    <input type="text" placeholder="raza" name="raza" >
+    <h1>INGRESAR MASCOTA</h1>
+<form action="agregar-mascota.php" method="post">
+  <section class="informacion-general">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" />
 
-    <input type="submit" name="ingresar" class="btn" value="Registrame" >
+    <label for="tipo-mascota">Tipo de mascota</label>
+    <select name="tipo-mascota" id="tipo-mascota">
+      <option value="perro">Perro</option>
+      <option value="gato">Gato</option>
+      <option value="ave">Ave</option>
+    </select>
+
+    <label for="raza">Raza</label>
+    <input type="text" name="raza" id="raza" />
+  </section>
+
+  <section class="informacion-adicional">
+    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+    <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" />
+  </section>
+
+  <input type="submit" value="Agregar mascota" />
 </form>
+
     
 </body>
 </html>

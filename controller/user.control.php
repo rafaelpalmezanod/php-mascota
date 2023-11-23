@@ -1,6 +1,6 @@
 <?php
 include_once(__DIR__."/../conexion.php");
-include_once(__DIR__."/../model\user.php");
+include_once(__DIR__."/../model/user.php");
 
 
  class UserControl extends conexion {
@@ -14,6 +14,7 @@ include_once(__DIR__."/../model\user.php");
        $modelUser->role_id="1";
        $msql = "INSERT INTO User (nombre,username,email,password,Role_id) value ('$modelUser->nombre', '$modelUser->username', '$modelUser->email', '$modelUser->password', '$modelUser->role_id')";
        $conect->query($msql);
+       return $conect;
        
     }
 

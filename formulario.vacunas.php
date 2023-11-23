@@ -12,15 +12,22 @@
     <h1>Dashboard de vacunas</h1>
   <?php
   require_once(__DIR__ ."../controller/vacuna.controles.php");
-  $users = (new Vacunacontrol)-> read();
-  
+  $vacunas = (new Vacunacontrol)-> read();
+
+  if (isset($_POST["borrar"] )){ 
+    (new Eliminarusuario)-> delearUsuario($_POST['borra']);
+  }elseif (isset($_POST["editar"])){
+    session_start();
+    $_SESSION["idVacuna"] = $_POST["editar"];
+    header('location:update.vacuna.php');
+  }
   ?>
   <div class="header">
   <p class="text_row">ID</p>
   <p class="text_row">NOMBRE</p>         
   </div>
   <?php
-    foreach ($vacuna as $vacuna) {
+    foreach ($vacunas as $vacuna) {
   ?>
     <form method="post">
       <div class="cont"> 
@@ -33,12 +40,9 @@
           <input type="submit" name="borra" value="<?php echo$vacuna['id'] ;?>">
         </div>
       </div>
-
     </form>
   <?php
   }
   ?>
-  
-  
 </body>
 </html>
