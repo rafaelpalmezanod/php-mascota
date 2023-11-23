@@ -43,8 +43,12 @@
           <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
         </div> 
         <div class="cont__btn">
-          <input type="submit" name="editar" value="<?php echo$user['id'];?>">
-          <input type="submit" name="borra" value="<?php echo$user['id'] ;?>">
+          <input type="submit" name="editar" value="  <?php echo$user['id'];?>Actualizar">
+        <form action="/..process/eliminar.php" method="post">
+        <input type="submit" name="borra" value="<?php $user['id']?> Eliminar">
+        <input type="hidden" value="borra">
+        </form>
+          
         </div>
       </div>
 

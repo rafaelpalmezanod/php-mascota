@@ -36,6 +36,7 @@ class Vacunacontrol extends conexion{
         $msql = "DELETE FROM Vacuna WHERE id=$id";
         $conect->query($msql);
         $conect->close();
+        
       }
 }
 
