@@ -29,6 +29,11 @@
     <input type="text" placeholder="Email" name="email" value="<?php echo($dataUser['email']) ?>">
     <input type="text" placeholder="Username" name="username" value="<?php echo($dataUser['username']) ?>">
     <input type="submit" name="actualizar" class="btn" value="Actualizar" >
+    <?php 
+        if(isset($_POST['actualizar'])) {
+            header("location:formulario.php");
+        }
+    ?>
 </form>
 
 </body>
