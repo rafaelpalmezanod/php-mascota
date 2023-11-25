@@ -13,9 +13,10 @@
   <?php
   require_once(__DIR__ ."/controller\user.control.php");
   $users = (new UserControl)-> read();
+  require_once(__DIR__ ."/process/eliminar.php");
 
   if (isset($_POST["borrar"] )){ 
-    (new Eliminarusuario)-> delearUsuario($_POST['borra']);
+    (new Eliminarusuario)-> delearUsuario($_POST['borrar']);
   }elseif (isset($_POST["editar"])){
     session_start();
     $_SESSION["idUser"] = $_POST["editar"];
@@ -43,8 +44,9 @@
           <p class="text_row"><?php echo  $user['Role_id']," ";?></p>
         </div> 
         <div class="cont__btn">
-          <input type="submit" name="editar" value="<?php echo$user['id'];?>">
-          <input type="submit" name="borra" value="<?php echo$user['id'] ;?>">
+          <input type="submit" name="editar" value="  <?php echo$user['id'];?>">
+        
+          <input type="submit" name="borrar" value="  <?php echo$user['id'] ;?>">
         </div>
       </div>
 

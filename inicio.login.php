@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+      session_start();
+      if (isset($_SESSION["User_id"]) ){
+        header("location: inicio.php");
+      }
+    ?>
 <header>
     <div class="container">
       <a href="index.php" class="logo">

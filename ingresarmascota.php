@@ -8,33 +8,38 @@
     <link rel="stylesheet" href="css\ingresarmascota.css">
 </head>
 <body>
+<?php
+    // include_once __DIR__ ."/process/registrar_mascota.php";
+    // (new RegistroMascota)->validarMacota();
+    include_once __DIR__ ."/controller/tipoMascota.control.php";
+    $tipoMascota = (new TipoMascotacontrol)->read();
+    include_once __DIR__ ."/controller/raza.control.php";
+    $tipoRaza = (new Razacontrol)->read();
+?>
     <h1>INGRESAR MASCOTA</h1>
-    <body>
-    <h1>Agregar Mascota</h1>
-    <form action="agregar-mascota.php" method="post">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" required>
+<form action="agregar-mascota.php" method="post">
+  <section class="informacion-general">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" />
 
-        <label for="fecha-nacimiento">Fecha de Nacimiento</label>
-        <input type="datetime-local" name="fecha-nacimiento" required>
+    <label for="tipo-mascota">Tipo de mascota</label>
+    <select name="tipo-mascota" id="tipo-mascota">
+      <option value="perro">Perro</option>
+      <option value="gato">Gato</option>
+      <option value="ave">Ave</option>
+    </select>
 
-        <label for="user-id">Usuario</label>
-        <select name="user-id" required>
-            <!-- Aquí debes cargar dinámicamente los usuarios desde la base de datos -->
-        </select>
+    <label for="raza">Raza</label>
+    <input type="text" name="raza" id="raza" />
+  </section>
 
-        <label for="tipo-mascota-id">Tipo de mascota</label>
-        <select name="tipo-mascota-id" required>
-            <!-- Aquí debes cargar dinámicamente los tipos de mascotas desde la base de datos -->
-        </select>
+  <section class="informacion-adicional">
+    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+    <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" />
+  </section>
 
-        <label for="raza-id">Raza</label>
-        <select name="raza-id" required>
-            <!-- Aquí debes cargar dinámicamente las razas desde la base de datos -->
-        </select>
-
-        <input type="submit" name="ingresar" value="Agregar mascota">
-    </form>
+  <input type="submit" value="Agregar mascota" />
+</form>
 
     
 </body>

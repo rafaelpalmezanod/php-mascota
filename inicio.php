@@ -9,6 +9,12 @@
 </head>
 <body>
 <header>
+<?php 
+      session_start();
+      if (isset($_SESSION["User_id"]) ){
+        header("location: inicio.php");
+      }
+    ?>
     <div class="container">
       <a href="index.php" class="logo">
         <img src="img\Logo veterinaria pet shop rustico blanco y negro.png" alt="Logo de la veterinaria">
