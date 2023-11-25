@@ -16,7 +16,6 @@ class Razacontrol extends conexion{
         $conect =(new conexion)->conn();
         $msql = "SELECT * FROM Raza";
         $result = $conect->query($msql);
-        $vacunas =[];
         return $result;
 
     }

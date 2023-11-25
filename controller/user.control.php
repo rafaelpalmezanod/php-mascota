@@ -79,6 +79,13 @@ include_once(__DIR__."/../model/user.php");
        
     }
 
+    public function  getUsuario($id){
+        $conect =(new conexion)->conn();
+        $msql = "SELECT nombre FROM Usuario where id=$id";
+        $result = $conect->query($msql);
+        $row = $result->fetch_assoc();
+        return $row["nombre"];
+    }
 
 
 }

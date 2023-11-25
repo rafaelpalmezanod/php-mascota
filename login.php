@@ -10,6 +10,12 @@
     <link rel="icon" href="img\Logo veterinaria pet shop rustico blanco y negro.png">
     <link rel="stylesheet" href="css\login.css">
 </head>
+<?php 
+ session_start();
+ if(isset($_SESSION['usuario'])){
+    header("location:inicio.php");
+ }
+?>
 <body>
     <form  method="post" action="">
     <img src="./img/Logo veterinaria pet shop rustico blanco y negro.png" alt="">

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css\ingresarmascota.css">
 </head>
 <body>
+  <img src="./img/Logo veterinaria pet shop rustico blanco y negro.png" alt="">
 <?php
     // include_once __DIR__ ."/process/registrar_mascota.php";
     // (new RegistroMascota)->validarMacota();
@@ -17,20 +18,30 @@
     $tipoRaza = (new Razacontrol)->read();
 ?>
     <h1>INGRESAR MASCOTA</h1>
-<form action="agregar-mascota.php" method="post">
+<form action="" method="post">
   <section class="informacion-general">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" />
 
     <label for="tipo-mascota">Tipo de mascota</label>
     <select name="tipo-mascota" id="tipo-mascota">
-      <option value="perro">Perro</option>
-      <option value="gato">Gato</option>
-      <option value="ave">Ave</option>
+    <option value="">Seleccina Tipo Mascota</option>
+      <?php 
+       foreach ($tipoMascota as $mascota ) {
+      ?>
+        <option value="<?php echo $mascota['id']?>"><?php echo $mascota['nombre']?></option>
+      <?php }?>
     </select>
 
     <label for="raza">Raza</label>
-    <input type="text" name="raza" id="raza" />
+    <select name="raza" id="raza">
+      <option value="">Seleccina raza</option>
+      <?php 
+       foreach ($tipoRaza as $Raza ) {
+      ?>
+        <option value="<?php echo $Raza['id']?>"><?php echo $Raza['nombre']?></option>
+      <?php }?>
+    </select>
   </section>
 
   <section class="informacion-adicional">
@@ -38,7 +49,12 @@
     <input type="date" name="fecha-nacimiento" id="fecha-nacimiento" />
   </section>
 
-  <input type="submit" value="Agregar mascota" />
+  <input type="submit" name="ingresar" value="Agregar mascota" />
+  <?php 
+   if (isset($_POST["ingresar"])) {
+      require_once __DIR__."/process/registrar_mascota.php";
+   }
+  ?>
 </form>
 
     

@@ -6,9 +6,37 @@
     <link rel="icon" href="img\Logo veterinaria pet shop rustico blanco y negro.png">
     <link rel="stylesheet" href="css\inicio.css">
     <title>Document</title>
+    <style>
+       body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .bienvenida-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; 
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        .bienvenida-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
+<div id="bienvenida" class="bienvenida-container">
+        <img src="img\Logo veterinaria pet shop rustico blanco y negro.png" alt="Logo de la veterinaria">
+    </div>
 <header>
+  
 <?php 
       session_start();
       if (isset($_SESSION["User_id"]) ){
@@ -77,8 +105,17 @@
     </div>
   </footer>
  
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Muestra la pantalla de bienvenida
+            document.getElementById("bienvenida").style.display = "flex";
 
-
+            // Después de 5 segundos, oculta la pantalla de bienvenida
+            setTimeout(function () {
+                document.getElementById("bienvenida").style.display = "none";
+            }, 5000); // 5000 milisegundos = 5 segundos
+        });
+    </script>
 
 
 </body>

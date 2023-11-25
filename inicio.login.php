@@ -21,8 +21,12 @@
       </a>
       <nav>
         <ul>
-          <li><a href="inicio.php">Atras</a></li>
-          <li><a href="formulario.php">Formulario</a></li>
+          <li><a href="inicio.login.php">Atras</a></li>
+          <li><a href="formulario.php">Control Usuario</a></li>
+          <li><a href="formulario.php">Control Mascota</a></li>
+          <li><a href="formulario.php">Ingresar Vacuna</a></li>
+          <li><a href="formulario.php">Ingresar Mascota</a></li>
+
           
         </ul>
       </nav>

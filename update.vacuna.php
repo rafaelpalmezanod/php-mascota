@@ -23,7 +23,7 @@
 ?>
 <form  method="post">
     <img src="img\Logo veterinaria pet shop rustico blanco y negro.png" alt="">
-    <h1>ACTUALIZAR</h1>
+    <h1>INGRESAR vacuna</h1>
     <input type="text" placeholder="Nombre" name="nombre" value="<?php echo($dataUser['nombre']) ?>">
     <input type="submit" name="actualizar" class="btn" value="Actualizar" >
 </form>
