@@ -45,9 +45,7 @@
         </div> 
         <div class="cont__btn">
         <input type="submit" name="editar" value="  <?php echo$user['id'];?>">
-        <form action="/..process/eliminar.php" method="post">
-        <input type="submit" name="borra" value="<?php $user['id']?> ">
-        <input type="hidden" value="borra">
+        <input type="submit" name="borra" value="<?php echo $user['id']?> ">
 
     </form>
   <?php

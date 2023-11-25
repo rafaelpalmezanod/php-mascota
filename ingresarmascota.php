@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css\ingresarmascota.css">
 </head>
 <body>
-  <img src="./img/Logo veterinaria pet shop rustico blanco y negro.png" alt="">
+  
 <?php
     // include_once __DIR__ ."/process/registrar_mascota.php";
     // (new RegistroMascota)->validarMacota();
@@ -17,8 +17,10 @@
     include_once __DIR__ ."/controller/raza.control.php";
     $tipoRaza = (new Razacontrol)->read();
 ?>
-    <h1>INGRESAR MASCOTA</h1>
+    
 <form action="" method="post">
+    <img src="./img/Logo veterinaria pet shop rustico blanco y negro.png" alt="">
+    <h1>INGRESAR MASCOTA</h1>
   <section class="informacion-general">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" />

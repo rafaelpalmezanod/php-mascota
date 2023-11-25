@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img\Logo veterinaria pet shop rustico blanco y negro.png">
     <title>Document</title>
-    <link rel="stylesheet" href="css\formulario.css">
+    <link rel="stylesheet" href="css\formulario mascota.css">
 </head>
 <body>
 <div class="container">
@@ -30,7 +30,7 @@
   }
   
   ?>
-  <div class="header" style="grid-template-columns: clamp(20px, 5vw, 150px) 14vw auto 20vw 16vw auto;">
+  <div class="header" >
   <p class="text_row">ID</p>
   <p class="text_row">NOMBRE</p>      
   <p class="text_row">FECHANACIMIENTO</p>   
@@ -52,7 +52,7 @@
           <p class="text_row"><?php echo $RAZAS->getRaza($Mascota['Raza_id']);?></p>
         </div> 
         <div class="cont__btn">
-          <input type="submit" name="editar" value="  <?php echo$Mascota['id'];?>">
+          <input type="submit" name="editar" data-value="Actualizar" value="  <?php echo$Mascota['id'];?>" >
         
           <input type="submit" name="borrar" value="  <?php echo$Mascota['id'] ;?>">
         </div>

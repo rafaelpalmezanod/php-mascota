@@ -10,7 +10,7 @@
 <body>
     <?php 
       session_start();
-      if (isset($_SESSION["User_id"]) ){
+      if (isset($_SESSION["username"]) ){
         header("location: inicio.php");
       }
     ?>
@@ -21,7 +21,7 @@
       </a>
       <nav>
         <ul>
-          <li><a href="inicio.login.php">Atras</a></li>
+          <li><a href="logout.php">Cerrar Sesion</a></li>
           <li><a href="formulario.php">Control Usuario</a></li>
           <li><a href="formulario.mascota.php">Control Mascota</a></li>
           <li><a href="formulario.vacunas.php">Control Vacuna</a></li>

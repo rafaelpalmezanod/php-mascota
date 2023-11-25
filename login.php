@@ -12,8 +12,8 @@
 </head>
 <?php 
  session_start();
- if(isset($_SESSION['usuario'])){
-    header("location:inicio.php");
+ if(empty($_SESSION['usuario'])){
+    header("location:login.php");
  }
 ?>
 <body>

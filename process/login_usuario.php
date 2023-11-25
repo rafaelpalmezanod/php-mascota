@@ -21,7 +21,6 @@ class Login_usuario extends conexion
                     $resultArray = mysqli_fetch_array($result);
                     $hash = $resultArray['password'];
                     if(password_verify($password, $hash)){
-                        session_start();
                         $_SESSION["username"] = $username;
                         $_SESSION["Role"] = $resultArray["Role_id"];
                         $_SESSION["id"] = $resultArray["id"];

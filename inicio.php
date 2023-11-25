@@ -40,7 +40,7 @@
 <?php 
       session_start();
       if (isset($_SESSION["User_id"]) ){
-        header("location: inicio.php");
+        header("location: inicio.login.php");
       }
     ?>
     <div class="container">
