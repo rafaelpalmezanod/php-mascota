@@ -17,14 +17,16 @@
     $RAZAS = new Razacontrol;
     require_once(__DIR__ ."/controller/tipomascota.control.php");
     $Tipomascota = new TipoMascotacontrol;
+    require_once(__DIR__ ."/controller/user.control.php");
+    $USER = new  UserControl ;
     
 
   if (isset($_POST["borrar"] )){ 
     (new Eliminarusuario)-> delearUsuario($_POST['borrar']);
   }elseif (isset($_POST["editar"])){
     session_start();
-    $_SESSION["idUser"] = $_POST["editar"];
-    header('location:update.php');
+    $_SESSION["$mascota"] = $_POST["editar"];
+    header('location:update.mascota.php');
   }
   
   ?>
@@ -45,7 +47,7 @@
           <p class="text_row"><?php echo  $Mascota['id']," ";?></p>
           <p class="text_row"><?php echo  $Mascota['nombre']," ";?></p>      
           <p class="text_row"><?php echo  $Mascota['FechaNacimiento']," ";?></p>   
-          <p class="text_row"><?php echo  $Mascota['User_id']," ";?></p>   
+          <p class="text_row"><?php echo  $USER->getUsuario($Mascota['User_id']);?></p>   
           <p class="text_row"><?php echo $Tipomascota->getTipomascota($Mascota['TipoMascota_id']);?></p>
           <p class="text_row"><?php echo $RAZAS->getRaza($Mascota['Raza_id']);?></p>
         </div> 

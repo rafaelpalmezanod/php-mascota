@@ -23,9 +23,10 @@
         <ul>
           <li><a href="inicio.login.php">Atras</a></li>
           <li><a href="formulario.php">Control Usuario</a></li>
-          <li><a href="formulario.php">Control Mascota</a></li>
-          <li><a href="formulario.php">Ingresar Vacuna</a></li>
-          <li><a href="formulario.php">Ingresar Mascota</a></li>
+          <li><a href="formulario.mascota.php">Control Mascota</a></li>
+          <li><a href="formulario.vacunas.php">Control Vacuna</a></li>
+          <li><a href="vacuna.php">Ingresar Vacuna</a></li>
+          <li><a href="ingresarmascota.php">Ingresar Mascota</a></li>
 
           
         </ul>

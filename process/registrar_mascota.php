@@ -7,7 +7,7 @@ $modelMascota = new Mascota;
 
 $modelMascota ->nombre = $_POST["nombre"];
 $modelMascota ->fechaNacimiento = $_POST["fecha-nacimiento"];
-$modelMascota ->User_id = 4;
+$modelMascota ->User_id = 1;
 $modelMascota ->TipoMascota_id = $_POST["tipo-mascota"];
 $modelMascota ->raza_id = $_POST["raza"];
 
