@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="css\login.css">
 </head>
 <?php 
- session_start();
+ /*session_start();
  if(empty($_SESSION['usuario'])){
     header("location:login.php");
- }
+ }*/
 ?>
 <body>
     <form  method="post" action="">
